@@ -199,8 +199,8 @@ class RealImageLoaderIntegrationTest {
 
     @Test
     fun memoryCacheDisabled_preloadDoesNotDecode() {
-        val imageLoader = ImageLoader(context) {
-            componentRegistry {
+        val imageLoader = ImageLoader.Builder(context)
+            .componentRegistry {
                 add(object : Decoder {
                     override fun handles(source: BufferedSource, mimeType: String?) = true
 
@@ -212,7 +212,7 @@ class RealImageLoaderIntegrationTest {
                     ) = throw IllegalStateException("Decode should not be called.")
                 })
             }
-        }
+            .build()
 
         val url = server.url(IMAGE_NAME)
         val cacheFolder = Utils.getDefaultCacheDirectory(context).apply {
@@ -242,8 +242,8 @@ class RealImageLoaderIntegrationTest {
     @Test
     fun memoryCacheDisabled_getDoesDecode() {
         var numDecodes = 0
-        val imageLoader = ImageLoader(context) {
-            componentRegistry {
+        val imageLoader = ImageLoader.Builder(context)
+            .componentRegistry {
                 add(object : Decoder {
                     private val delegate = BitmapFactoryDecoder(context)
 
@@ -260,7 +260,7 @@ class RealImageLoaderIntegrationTest {
                     }
                 })
             }
-        }
+            .build()
 
         val url = server.url(IMAGE_NAME)
         val cacheFolder = Utils.getDefaultCacheDirectory(context).apply {
