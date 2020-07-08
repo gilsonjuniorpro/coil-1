@@ -69,6 +69,13 @@ Coil is fully compatible with R8 out of the box and doesn't require adding any e
 
 If you use Proguard, you may need to add rules for [Coroutines](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/resources/META-INF/proguard/coroutines.pro), [OkHttp](https://github.com/square/okhttp/blob/master/okhttp/src/main/resources/META-INF/proguard/okhttp3.pro) and [Okio](https://github.com/square/okio/blob/master/okio/src/jvmMain/resources/META-INF/proguard/okio.pro).
 
+### Donation
+If this project help you reduce time to develop, you can buy me a cup of coffee :) 
+
+<a href="https://www.buymeacoffee.com/gilsonjuniorpro" target="_blank">
+    <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" >
+</a>
+
 ## License
 
     Copyright 2019 Coil Contributors
